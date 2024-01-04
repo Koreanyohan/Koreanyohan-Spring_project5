@@ -1,0 +1,20 @@
+<!-- DTO개념. sampleController의 ex5 -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">  
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>List</h1>
+	<p> 첫번째 요소: [[ ${list[0]} ]] </p>  
+	<p> 두번째 요소: [[ ${list[1]} ]] </p>
+	<p> 세번째 요소: [[ ${list.get(2)} ]] </p>
+	<p> 세번째 요소의 번호: [[ ${list.get(2).no} ]] </p>
+	<!-- 리스트에서 요소 꺼내기 list[i] 또는 list.get(i) -->
+	<!-- 객체 가진 클래스의 @ToString 덕분에 주소말고 요소들 출력됨 -->
+</body>
+</html>
+
+
+

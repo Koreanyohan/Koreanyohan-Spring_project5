@@ -1,0 +1,31 @@
+<!-- p.13 반복문( th:each태그로 시작 ) - SampleController ex6메서드에 연결 -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body> 
+
+	<h1>반복문</h1>
+	<ul>
+		<li th:each="dto : ${list} ">  <!-- (여기서 막 선언된 변수:컨트롤러에서 받은 리스트) -->
+			[[ ${dto} ]]
+		</li>
+	</ul>		
+	<!-- 결과가 ex5)의
+	<p>  첫번째 요소: [[ ${list[0]} ]] </p>  
+	<p>  두번째 요소: [[ ${list[1]} ]] </p>
+	<p>  세번째 요소: [[ ${list.get(2)} ]] </p>
+		 와 같다. -->
+		 
+		 
+	<h1> 반복문의 상태객체 </h1>
+	<ul>
+		<li th:each=" dto, status : ${list} ">
+		 	[[ ${status} ]] 
+		</li>
+	</ul>
+	
+</body>
+</html>
