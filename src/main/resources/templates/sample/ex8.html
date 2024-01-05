@@ -1,0 +1,25 @@
+<!-- p.14 조건문 - SampleController ex8 메서드에 연결-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+   <h1>블록태그</h1>
+	
+	<th:block th:each = "dto: ${list}">
+	
+		<p>    [[${dto}]] </p>
+		<span> [[${dto}]] </span>
+		
+		<!-- 블록태그를 사용하면 여러가지 하위태그를 넣을 수 있다.(장점)
+		 html태그에 반복문썼다고 가정하면, html태그마다 자식을 가질 수 있는것도 있고 못갖는것도 있음. -->		
+	
+	</th:block>
+	
+</body>
+
+</html>

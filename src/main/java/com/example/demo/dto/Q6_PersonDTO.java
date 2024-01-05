@@ -1,7 +1,5 @@
 package com.example.demo.dto;
 
-import java.time.LocalDate;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,14 +13,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SampleDTO {
-	
-	int no; // 글 번호
-	
-	String text; // 글 내용
-	
-	LocalDate regDate ; // 등록일
+public class Q6_PersonDTO {
+	String name;
+	int age;
+	String address;
 
 }
-
-

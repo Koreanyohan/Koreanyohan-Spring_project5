@@ -1,0 +1,20 @@
+<!-- p.14 조건문 - SampleController ex7_1 메서드에 연결-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>조건문 unless</h1>
+    <!-- th:block 블록태그 -->
+		<th:block th:each = "dto:${list}"> <!-- (여기서 막 선언된 변수(따라서 이름 아무거나 해도 된다.):컨트롤러에서 받은 리스트) -->
+		
+		<p th:unless=" ${dto.no == 2}"  th:text=" ${dto}"> </p>  
+   		<!-- (th:unless="조건문" th:text="조건만족시 출력문") -->
+   	
+	</th:block>
+
+</body>
+</html>

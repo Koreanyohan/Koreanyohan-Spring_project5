@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+
+<style>
+	table, th, td, tr {
+		border : 1px solid black;
+		border-collapse : collapse;
+		padding:20px;
+	}	
+</style>
+
+
+<title>Insert title here</title>
+</head>
+<body>
+
+	<table>
+	<tr>
+	<th>성</th>
+	<th>이름</th>
+	<th>나이</th>
+	<th>주소</th>
+	</tr>
+	
+	<th:block th:each="personData:${personData}">
+	 
+	<tr th:if="${personData.age<=19}">
+		<td> [[ ${#strings.substring(personData.name, 0,1) }]]
+		</td>
+		<td> [[ ${#strings.substring(personData.name, 1,3) }]]
+		</td>
+		<td> [[ ${personData.age} ]]
+		</td>
+		<td> [[ ${personData.address} ]]
+		</td>				 
+		
+	</th:block>			
+			
+	</tr>
+	</th:block>	
+	</table>
+</body>
+</html>

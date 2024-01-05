@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+
+<style>
+	table, th, td, tr {
+		border : 1px solid black;
+		border-collapse : collapse;
+		padding:20px;
+	}	
+</style>
+
+<title>Insert title here</title>
+</head>
+<body>
+
+	<table>
+	<tr>
+	<th>성</th>
+	<th>이름</th>
+	<th>나이</th>
+	<th>주소</th>
+	<th>인천 거주 여부</th>
+	</tr>
+	
+	<th:block th:each="personData:${personData}"> 
+	<tr>
+		<td> [[ ${#strings.substring(personData.name, 0,1) }]]
+		</td>
+		<td> [[ ${#strings.substring(personData.name, 1,3) }]]
+		</td>
+		<td> [[ ${personData.age} ]]
+		</td>
+		<td> [[ ${personData.address} ]]
+		</td>
+		<td> 
+		[[${#strings.contains(personData.address, '인천')==true}? 거주 : 비거주]] 
+		</td>	
+		
+		<!-- ㅂㅅ아  [[${}]] 이건 출력 하는기능이다. 이걸 안에 또넣어버리면안되지 ㅡㅡ -->
+		<!-- 조건문에 ==true넣어야 true지.. 반복문에야 매개변수로 조건문 넣기만 하면 true면 자동 반복이지만, 조건문 매개변수는 true인지 false인지 boolean 조건문 넣어줘야지!!!! --> 
+
+					
+	</tr>
+	</th:block>	
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+
+    <!-- th:block 블록태그 -->
+		<th:block th:each = "dto:${numberList}"> 
+		<!-- (여기서 막 선언된 변수(따라서 이름 아무거나 해도 된다.):컨트롤러에서 받은 리스트) -->
+		
+		<span th:if=" ${dto%2==0}"  th:text=" ${dto}"> </span>  
+   		
+   	
+	</th:block>
+
+</body>
+</html>

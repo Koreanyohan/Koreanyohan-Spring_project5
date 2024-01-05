@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,20 @@ import com.example.demo.dto.SampleDTO;
 @Controller // 컨트롤러 역할으로 지정됨
 @RequestMapping("/sample") // 중간경로.   :  URL =  ~~/중간경로/마지막경로
 public class sampleController {
-
+		
+	@GetMapping({"/ex5", "/ex6", "/ex7", "/ex7_1", "/ex7_2", "/ex8"})//  /ex5나 /ex6 /ex7 /ex7_1 /ex7_2 /ex8   끝주소 입력시 메서드 호출되도록 
+	public void ex5(Model model) {
+	
+			List<SampleDTO> list = new ArrayList<>();
+			
+				list.add(new SampleDTO(1, "aaa", LocalDate.now()));
+				list.add(new SampleDTO(2, "bbb", LocalDate.now()));
+				list.add(new SampleDTO(3, "ccc", LocalDate.now()));
+				
+			model.addAttribute("list", list);
+							// (변수이름, 변수에 들어갈 데이터-숫자,문자열,map,list 등등. )			
+	}
+	
 	@GetMapping("/ex1")
 	public void ex1() { //사용자 요청 처리 method (sample/ex1)
 		//리턴타입이 void인 경우, 자동으로 url경로와 일치하는 html파일을 찾아 반환 (mvc에서 String으로 반환값->반환될 주소직접 입력. webapp폴더에서 jsp파일 찾음)
@@ -52,19 +66,27 @@ public class sampleController {
 						// (변수이름, 변수에 들어갈 데이터)				
 	}	
 	
-	@GetMapping({"/ex5", "/ex6", "/ex7"})//  /ex5나 /ex6 /ex7 끝주소 입력시 메서드 호출되도록
-	public void ex5(Model model) {
+
 	
-			List<SampleDTO> list = new ArrayList<>();
-			
-				list.add(new SampleDTO(1, "aaa", LocalDate.now()));
-				list.add(new SampleDTO(2, "bbb", LocalDate.now()));
-				list.add(new SampleDTO(3, "ccc", LocalDate.now()));
-				
-			model.addAttribute("list", list);
-							// (변수이름, 변수에 들어갈 데이터-숫자,문자열,map,list 등등. )			
-	}	
+	@GetMapping("/ex9")
+	public void ex9(Model model) {
+		
+		SampleDTO sampleDTO = new SampleDTO(1, "aaa", LocalDate.now());
+		
+		model.addAttribute("result", "success"); // html의 변수 result에 문자열 "success"전달
+		model.addAttribute("dto", sampleDTO); // html의 변수 dto에 객체 sampleDTO전달
+		// (변수이름, 변수에 들어갈 데이터)			
+	}
+	
+	/* p.19 타임리프의 기본객체 */
+	@GetMapping("/ex10")
+	public void ex10(Model model) {
+		model.addAttribute("date", LocalDateTime.now());
+	}
+	
+	
 }
+
 
 
 

@@ -1,0 +1,18 @@
+<!-- p.16 인라인 속성-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script th:inline="javascript"> // 자바스크립트 안에서도 타임리프 사용 가능
+		var msg = [[ ${result} ]];
+		var dto = [[ ${dto}    ]];
+		
+		console.log(dto.text);
+	</script>
+
+</body>
+</html>

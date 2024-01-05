@@ -1,0 +1,19 @@
+<!-- p.14 조건문 - SampleController ex7_2 메서드에 연결-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+   
+    <h1>삼항연산자</h1>       <!-- ${식} ? 결과1 : 결과2 -->
+     <!-- th:block 블록태그 -->
+	<th:block th:each = "dto: ${list}"> 
+	<!-- (여기서 막 선언된 변수(따라서 이름 아무거나 해도 된다.):컨트롤러에서 받은 리스트) -->
+		
+		<p th:text=" ${dto.no==2} ? ${dto} : --- "></p>
+	</th:block>	
+
+</body>
+</html>

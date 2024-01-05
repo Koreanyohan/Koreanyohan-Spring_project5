@@ -1,0 +1,44 @@
+<!-- LayoutController와 연결 -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+
+<style>
+    .header {
+        height: 20vh;
+        background-color: aqua;  /* pink로 변경 */
+    }
+    .content {
+        height: 30vh;
+        background-color: lightgray;
+    }
+    .footer {
+        height: 10vh;
+        background-color: green;
+    }
+</style>
+
+</head>
+
+<body>
+
+	<div class="header">
+		<h1>HEADER</h1>
+	</div>
+	
+	<div class="content" >
+		<th:block th:replace = " ~{ Layout/fragment :: frag1 } "> 
+						    <!-- ~{파일경로 :: 이름} -->  
+		</th:block> 
+	</div>
+	
+	<div class="footer">
+		<h1>FOOTER</h1>
+	</div>
+
+
+
+</body>
+
+</html>
