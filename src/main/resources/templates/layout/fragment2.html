@@ -1,0 +1,17 @@
+<!-- 조각페이지 -->
+<!DOCTYPE html>
+<!-- 특정 파일에 fragment 던지는 예시. exLayout2.html에 던진다. 따라서 html불러올 때  localhost:8080/layout/fragment2로 해야됨. -->
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace=" ~{ /Layout/exLayout2 :: setContent( ~{this::content} ) } ">
+	<!-- ~{this:content}의미 : 이 파일에 있는 content를 fragment로서 전달해주겠다. -->
+
+	<!-- 조각만들기 -->
+	<th:block th:fragment="content">
+	
+		<h1>조각1</h1>
+	
+	</th:block>
+
+</th:block>

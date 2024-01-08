@@ -1,0 +1,18 @@
+<!-- basic.html에 던질 조각만들기 -->
+
+<!DOCTYPE html>
+<!-- 특정 파일에 fragment 던지는 예시. basic.html에 던진다. 따라서 html불러올 때  localhost:8080/layout/fragment3로 해야됨. -->
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace=" ~{ /Layout/basic :: setContent( ~{this::content} ) } ">
+	<!-- ~{this:content}의미 : 이 파일에 있는 content를 fragment로서 basic.html에 전달해주겠다. -->
+
+	<!-- 조각만들기 -->
+	<th:block th:fragment="content">
+	
+		<h1>exSidebar Page</h1>
+	
+	</th:block>
+
+</th:block>
